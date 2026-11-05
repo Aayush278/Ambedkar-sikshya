@@ -1,0 +1,264 @@
+/* ============================================================
+   AMBEDKAR SIKHYA — Admin Dashboard Styles
+   ============================================================ */
+
+.admin-body {
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-heading);
+}
+
+/* Login Wrapper */
+.admin-login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+}
+
+.admin-login-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 40px -15px rgba(26, 46, 90, 0.12);
+  width: 100%;
+  max-width: 440px;
+  padding: var(--space-2xl);
+}
+
+/* Admin Top Bar */
+.admin-topbar {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 0.9rem var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.admin-user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.admin-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+/* Dashboard Tabs Navigation */
+.admin-nav-tabs {
+  display: flex;
+  gap: var(--space-sm);
+  background: var(--color-surface);
+  border-bottom: 1.5px solid var(--color-border);
+  padding: var(--space-md) var(--space-xl) 0;
+}
+
+.admin-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.admin-tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-secondary);
+}
+
+.admin-tab-btn:hover:not(.active) {
+  color: var(--color-heading);
+}
+
+/* Admin Content Layout */
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.admin-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.admin-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.admin-card-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+/* Options Input Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.option-input-wrapper {
+  position: relative;
+}
+
+.option-prefix {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 800;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+}
+
+.option-input-wrapper input {
+  padding-left: 2.25rem !important;
+}
+
+/* Question List Cards */
+.q-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  transition: all 0.2s ease;
+}
+
+.q-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-secondary-light);
+}
+
+.q-card-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.q-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: var(--space-md);
+}
+
+.q-options-display {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.q-opt-pill {
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.q-opt-pill.correct {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: #25D366;
+  color: #166534;
+  font-weight: 700;
+}
+
+.q-explanation {
+  background: rgba(59, 130, 246, 0.05);
+  border-left: 3px solid var(--color-secondary);
+  padding: 0.6rem 0.85rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.825rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+/* Table for PDFs */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  border-bottom: 1.5px solid var(--color-border);
+}
+
+.admin-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: 0.875rem;
+  color: var(--color-heading);
+}
+
+.admin-table tr:hover td {
+  background: #f8fafc;
+}
+
+@media (max-width: 768px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+  .q-options-display {
+    grid-template-columns: 1fr;
+  }
+  .admin-topbar {
+    padding: var(--space-md);
+  }
+  .admin-nav-tabs {
+    padding: var(--space-sm) var(--space-md) 0;
+    overflow-x: auto;
+  }
+}
+

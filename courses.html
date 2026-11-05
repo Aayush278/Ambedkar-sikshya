@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDFs, Notes & Questions — Ambedkar Sikhya</title>
+    <meta name="description" content="Download curated PDFs, study notes, and exam question papers from Ambedkar Sikhya.">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="components.css"><link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="Ambedkar Sikhya Home">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <div class="logo-text">
+                    <span class="logo-name">AMBEDKAR SIKHYA</span>
+                    <span class="logo-tagline">Learn • Guide • Grow • Succeed</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#gov-exam-counselling">Govt Exam Counselling</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#founder">About Founder</a></li>
+                    <li><a href="career.html">Career</a></li>
+                    <li><a href="tuition.html">Tuition</a></li>
+                    <li><a href="youtube.html">YouTube</a></li>
+                    <li><a href="updates.html">Updates</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-cta"><a href="counselling.html" class="btn btn-primary btn-sm">Book Counselling</a></li>
+                    <li class="nav-whatsapp"><a href="https://wa.me/919090398780" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">WhatsApp Us</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <nav class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>PDFs, Notes & Questions</span></nav>
+                <p class="overline">Study Resources</p>
+                <h1>PDFs, Notes & Questions</h1>
+                <p>Download comprehensive study notes, formula sheets, previous year question papers, and practice sets.</p>
+            </div>
+        </section>
+
+        <!-- Category Overview: Only PDFs & Notes and Questions -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="overline">Curated Study Library</p>
+                    <h2>What Are You Looking For?</h2>
+                    <p class="lead">Choose from our downloadable study notes or exam practice question papers.</p>
+                </div>
+                <div class="grid grid--2 reveal-stagger">
+                    <!-- Category 1: PDFs & Notes -->
+                    <div class="card" style="border: 1.5px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-xl); cursor: pointer; transition: all 0.25s ease;" onclick="filterResources('PDFs & Notes')">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-lg);">
+                            <div style="width: 56px; height: 56px; border-radius: var(--radius-lg); background: rgba(59, 130, 246, 0.1); color: var(--color-secondary); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>
+                            </div>
+                            <div style="flex-grow: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                    <span class="badge" style="background: rgba(59, 130, 246, 0.12); color: var(--color-secondary);">Category 1</span>
+                                    <span style="font-size: 0.775rem; color: var(--color-text-light); font-weight: 600;">Downloadable PDF</span>
+                                </div>
+                                <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--color-heading);">PDFs & Notes</h3>
+                                <p style="font-size: 0.9rem; color: var(--color-text); line-height: 1.5; margin-bottom: var(--space-md);">
+                                    Comprehensive chapter-wise revision notes, formula sheets, syllabus breakdowns, and downloadable study guides prepared by experienced teachers.
+                                </p>
+                                <span class="btn btn-sm btn-primary">Browse PDFs & Notes <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Questions -->
+                    <div class="card" style="border: 1.5px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-xl); transition: all 0.25s ease;">
+                        <div style="display: flex; align-items: flex-start; gap: var(--space-lg);">
+                            <div style="width: 56px; height: 56px; border-radius: var(--radius-lg); background: rgba(245, 158, 11, 0.12); color: var(--color-accent-dark); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+                            </div>
+                            <div style="flex-grow: 1;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+                                    <span class="badge" style="background: rgba(245, 158, 11, 0.12); color: var(--color-accent-dark);">Category 2</span>
+                                    <span style="font-size: 0.775rem; color: var(--color-text-light); font-weight: 600;">Test & Practice</span>
+                                </div>
+                                <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--color-heading);">Questions & Practice Tests</h3>
+                                <p style="font-size: 0.9rem; color: var(--color-text); line-height: 1.5; margin-bottom: var(--space-md);">
+                                    Previous years' question papers, chapter-wise practice sets, and interactive online MCQ tests with instant feedback and explanations.
+                                </p>
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                    <a href="practice.html" class="btn btn-sm btn-primary">Online MCQ Practice &rarr;</a>
+                                    <button type="button" class="btn btn-sm btn-accent" onclick="filterResources('Questions')">Browse Question Sets</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Practice Test Callout Banner -->
+        <section class="section" style="padding-top: 0; padding-bottom: var(--space-xl);">
+            <div class="container">
+                <div style="background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 65%, var(--color-secondary) 100%); border-radius: var(--radius-xl); padding: var(--space-xl) var(--space-2xl); color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-lg); box-shadow: 0 10px 25px -5px rgba(26,46,90,0.25);">
+                    <div>
+                        <span class="badge" style="background: var(--color-accent); color: #000; font-weight: 800; margin-bottom: 0.4rem; padding: 0.25rem 0.65rem;">ONLINE TEST MODE</span>
+                        <h3 style="color: #ffffff; font-size: 1.45rem; margin-top: 0.25rem; font-weight: 800;">Interactive MCQ Practice & Mock Tests</h3>
+                        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; max-width: 600px; margin-top: 0.25rem; line-height: 1.5;">
+                            Test yourself across Class 10, +2 Science, Government & Competitive Exams, Odisha GS & Teaching Exams. Instant right/wrong highlights and step-by-step solutions!
+                        </p>
+                    </div>
+                    <a href="practice.html" class="btn btn-accent btn-lg" style="color: #000000; font-weight: 800; white-space: nowrap;">
+                        Start MCQ Practice Now &rarr;
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Resources -->
+        <section class="section section--alt" id="available-resources">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="overline">Study Materials</p>
+                    <h2>Available Resources</h2>
+                    <p class="lead">Download PDFs, chapter notes, and question papers for your academic and exam preparation.</p>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="filter-tabs reveal" style="display: flex; gap: var(--space-sm); justify-content: center; margin-bottom: var(--space-2xl); flex-wrap: wrap;">
+                    <button type="button" class="btn btn-sm btn-primary filter-btn active" data-filter="all" onclick="filterResources('all')">All Resources</button>
+                    <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="PDFs & Notes" onclick="filterResources('PDFs & Notes')">PDFs & Notes</button>
+                    <button type="button" class="btn btn-sm btn-secondary filter-btn" data-filter="Questions" onclick="filterResources('Questions')">Questions</button>
+                </div>
+
+                <div class="grid grid--auto reveal-stagger" id="courses-container">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon CTA -->
+        <section class="section text-center">
+            <div class="container reveal">
+                <svg style="width:48px;height:48px;color:var(--color-primary);margin:0 auto var(--space-lg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                <h2>Need Specific Notes or Question Papers?</h2>
+                <p class="lead mx-auto mt-md" style="max-width:520px;">We are continuously uploading new PDFs, chapter notes, and solved questions. Let us know what you need and we will provide it directly.</p>
+                <div class="btn-group mt-xl" style="justify-content:center;">
+                    <a href="https://wa.me/919090398780?text=Hello%20Ambedkar%20Sikhya%2C%20I%20need%20study%20notes%20and%20question%20papers" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">Request on WhatsApp</a>
+                    <a href="contact.html" class="btn btn-secondary btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+                        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; color: var(--color-accent);"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        <span style="font-size: 1.1rem; font-weight: 800; color: #fff;">AMBEDKAR SIKHYA</span>
+                    </div>
+                    <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #78716c; margin-bottom: 1rem;">Learn • Guide • Grow • Succeed</p>
+                    <p>Empowering students with quality education, career guidance, and reliable educational updates.</p>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@AmbedkarSikhsha" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/ambedkarsikhsha?utm_source=qr&dlrf=MWZpNDZycWNyOHlrbw==" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1ETxiVoRoM/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://t.me/ambedkarsikhya" target="_blank" rel="noopener" aria-label="Telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#gov-exam-counselling">Govt Exam Counselling</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#founder">About Founder</a></li>
+                        <li><a href="career.html">Career Guidance</a></li>
+                        <li><a href="tuition.html">Home Tuition</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="updates.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#gov-exam-counselling">Govt Exam Counselling</a></li>
+                        <li><a href="tuition.html">Home Tuition</a></li>
+                        <li><a href="counselling.html">Career Counselling</a></li>
+                        <li><a href="career.html">Admission Guidance</a></li>
+                        <li><a href="updates.html">Educational Updates</a></li>
+                        <li><a href="courses.html">Study Materials (PDFs)</a></li>
+                        <li><a href="practice.html">Online MCQ Practice Tests</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.youtube.com/@AmbedkarSikhsha" target="_blank" rel="noopener">YouTube: @AmbedkarSikhsha</a></li>
+                        <li><a href="https://t.me/ambedkarsikhya" target="_blank" rel="noopener">Telegram: @ambedkarsikhya</a></li>
+                        <li><a href="https://www.instagram.com/ambedkarsikhsha?utm_source=qr&dlrf=MWZpNDZycWNyOHlrbw==" target="_blank" rel="noopener">Instagram: @ambedkarsikhsha</a></li>
+                        <li><a href="https://www.facebook.com/share/1ETxiVoRoM/" target="_blank" rel="noopener">Facebook Page</a></li>
+                        <li><a href="https://wa.me/919090398780" target="_blank" rel="noopener">WhatsApp Chat</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Ambedkar Sikhya provides educational information for informational purposes. Verify important dates with official sources. &copy; 2026 Ambedkar Sikhya.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="admin.html">Admin Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="https://wa.me/919090398780" class="fab" target="_blank" rel="noopener" aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="main.js"></script>
+    <script>
+    let allCourses = [];
+
+    function renderCourses(filter = 'all') {
+        const container = document.getElementById('courses-container');
+        if (!container) return;
+
+        const filtered = filter === 'all' 
+            ? allCourses 
+            : allCourses.filter(c => c.category.toLowerCase() === filter.toLowerCase());
+
+        if (filtered.length === 0) {
+            container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1; text-align: center; padding: var(--space-3xl);"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><h3 class="mt-md">No items found</h3><p style="color:var(--color-text-light);">We are adding more materials soon.</p></div>`;
+            return;
+        }
+
+        let html = '';
+        filtered.forEach(c => {
+            const isPdf = c.category === 'PDFs & Notes';
+            const badgeClass = isPdf ? 'badge' : 'badge badge--accent';
+            const btnClass = isPdf ? 'btn btn-sm btn-primary' : 'btn btn-sm btn-accent';
+            const iconSvg = isPdf 
+                ? '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>'
+                : '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>';
+            
+            // Action buttons: Direct download if Supabase file_url exists, or WhatsApp request
+            let actionBtnHtml = '';
+            if (c.file_url) {
+                actionBtnHtml = `
+                    <a href="${c.file_url}" target="_blank" rel="noopener" class="btn btn-sm btn-primary" download>
+                        ${iconSvg} Direct Download PDF
+                    </a>
+                `;
+            } else {
+                actionBtnHtml = `
+                    <a href="https://wa.me/919090398780?text=${encodeURIComponent('Hello Ambedkar Sikhya, I would like to get ' + c.title)}" target="_blank" rel="noopener" class="${btnClass}">
+                        ${iconSvg} ${isPdf ? 'Download PDF' : 'Get Question Set'}
+                    </a>
+                `;
+            }
+
+            // If it's a Questions category, also offer interactive practice button
+            let practiceBtnHtml = '';
+            if (!isPdf) {
+                practiceBtnHtml = `
+                    <a href="practice.html" class="btn btn-sm btn-secondary" title="Practice MCQs Online">
+                        Practice Online &rarr;
+                    </a>
+                `;
+            }
+
+            html += `
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="card-body">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
+                        <span class="${badgeClass}">${c.category}</span>
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-light); text-transform: uppercase;">${c.level || c.class_level || 'General'}</span>
+                    </div>
+                    <h3 class="card-title mt-sm" style="font-size: 1.15rem; line-height: 1.35;">${c.title}</h3>
+                    <p class="card-text mt-sm" style="font-size: 0.85rem; color: var(--color-text-light); line-height: 1.45;">${c.description || (c.topic ? c.subject + ' • ' + c.topic : (c.file_size ? 'Size: ' + c.file_size : ''))}</p>
+                    <div style="margin-top: auto; padding-top: var(--space-lg); display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                        ${actionBtnHtml}
+                        ${practiceBtnHtml}
+                    </div>
+                </div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+
+    function filterResources(category) {
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            if (btn.dataset.filter.toLowerCase() === category.toLowerCase()) {
+                btn.classList.add('btn-primary', 'active');
+                btn.classList.remove('btn-secondary');
+            } else {
+                btn.classList.remove('btn-primary', 'active');
+                btn.classList.add('btn-secondary');
+            }
+        });
+
+        renderCourses(category);
+
+        const target = document.getElementById('available-resources');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+        const container = document.getElementById('courses-container');
+        if (!container) return;
+
+        // 1. Fetch static courses.json first
+        try {
+            const res = await fetch('courses.json');
+            if (res.ok) {
+                allCourses = await res.json();
+            }
+        } catch (e) {
+            console.warn('Could not load courses.json:', e);
+        }
+
+        // 2. If Supabase is connected, load materials uploaded by admin
+        if (typeof db !== 'undefined' && db) {
+            try {
+                const { data: dbMaterials, error } = await db
+                    .from('materials')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (!error && dbMaterials && dbMaterials.length > 0) {
+                    const formatted = dbMaterials.map(m => ({
+                        id: m.id,
+                        title: m.title,
+                        category: m.category || 'PDFs & Notes',
+                        level: m.class_level,
+                        subject: m.subject,
+                        topic: m.topic,
+                        description: `${m.subject} — ${m.topic || 'General'}. Direct download uploaded by Admin (${m.file_size || 'PDF'}).`,
+                        file_url: m.file_url
+                    }));
+                    // Prepend newly uploaded admin materials
+                    allCourses = [...formatted, ...allCourses];
+                }
+            } catch (err) {
+                console.warn('Could not fetch Supabase materials:', err);
+            }
+        }
+
+        renderCourses('all');
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+

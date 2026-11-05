@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance — Ambedkar Sikhya</title>
+    <meta name="description" content="Explore career pathways after Class 10, +2, Graduation, and Post-Graduation. Interactive career guidance tool.">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="components.css"><link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo" aria-label="Ambedkar Sikhya Home">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <div class="logo-text">
+                    <span class="logo-name">AMBEDKAR SIKHYA</span>
+                    <span class="logo-tagline">Learn • Guide • Grow • Succeed</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#gov-exam-counselling">Govt Exam Counselling</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#founder">About Founder</a></li>
+                    <li><a href="career.html" class="active">Career</a></li>
+                    <li><a href="tuition.html">Tuition</a></li>
+                    <li><a href="youtube.html">YouTube</a></li>
+                    <li><a href="updates.html">Updates</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-cta"><a href="counselling.html" class="btn btn-primary btn-sm">Book Counselling</a></li>
+                    <li class="nav-whatsapp"><a href="https://wa.me/919090398780" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">WhatsApp Us</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <nav class="breadcrumb"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Career Guidance</span></nav>
+                <p class="overline">Find Your Direction</p>
+                <h1>Career Guidance</h1>
+                <p>Explore structured pathways based on your current education level.</p>
+            </div>
+        </section>
+
+        <!-- Career Questionnaire -->
+        <section class="section">
+            <div class="container" style="max-width: 640px;">
+                <div class="section-header reveal">
+                    <p class="overline">Interactive Tool</p>
+                    <h2>Find Your Path</h2>
+                    <p class="lead">Answer two quick questions and explore relevant career pathways.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="card-body">
+                        <form id="career-questionnaire">
+                            <div class="form-group">
+                                <label class="form-label" for="education-level">What have you completed?</label>
+                                <select id="education-level" class="form-control" required>
+                                    <option value="">Select your education level</option>
+                                    <option value="Class 10">Class 10</option>
+                                    <option value="+2">+2 / Higher Secondary</option>
+                                    <option value="Graduation">Graduation (+3)</option>
+                                    <option value="Post-Graduation">Post-Graduation</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="career-interest">What are you interested in?</label>
+                                <select id="career-interest" class="form-control" required>
+                                    <option value="">Select an area of interest</option>
+                                    <option value="Teaching">Teaching</option>
+                                    <option value="Government Jobs">Government Jobs</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Law">Law</option>
+                                    <option value="Research">Research</option>
+                                    <option value="Private Sector">Private Sector</option>
+                                    <option value="Creative Fields">Creative Fields</option>
+                                    <option value="Not Sure Yet">Not Sure Yet</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Show Pathways</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="career-results" class="hidden mt-xl"></div>
+            </div>
+        </section>
+
+        <!-- Detailed Guidance Options -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="overline">Detailed Guidance</p>
+                    <h2>Explore By Education Level</h2>
+                </div>
+                <div class="grid grid--2 reveal-stagger">
+                    <div class="card">
+                        <div class="card-image" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); display: flex; align-items: center; justify-content: center;">
+                            <svg style="width:64px;height:64px;color:#fff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">After 10th</h3>
+                            <p class="card-text">Explore +2 Arts, Science, Commerce, ITI, Diploma, Polytechnic, and Vocational courses. Understand which path leads where.</p>
+                            <div class="card-footer" style="padding:0; margin-top:var(--space-lg);">
+                                <a href="counselling.html" class="btn btn-sm btn-secondary">Get Advice</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image" style="background: linear-gradient(135deg, #0f766e, #14b8a6); display: flex; align-items: center; justify-content: center;">
+                            <svg style="width:64px;height:64px;color:#fff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">After +2</h3>
+                            <p class="card-text">Undergraduate programs, professional courses, competitive exams, and skill-based pathways across Arts, Science, and Commerce.</p>
+                            <div class="card-footer" style="padding:0; margin-top:var(--space-lg);">
+                                <a href="counselling.html" class="btn btn-sm btn-secondary">Get Advice</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image" style="background: linear-gradient(135deg, #7c3aed, #a78bfa); display: flex; align-items: center; justify-content: center;">
+                            <svg style="width:64px;height:64px;color:#fff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">After Graduation (+3)</h3>
+                            <p class="card-text">Post-Graduation, B.Ed, LLB, Government Jobs, Competitive Exams, Professional Courses, Research/PhD, and Private Sector careers.</p>
+                            <div class="card-footer" style="padding:0; margin-top:var(--space-lg);">
+                                <a href="counselling.html" class="btn btn-sm btn-secondary">Get Advice</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image" style="background: linear-gradient(135deg, #b45309, #f59e0b); display: flex; align-items: center; justify-content: center;">
+                            <svg style="width:64px;height:64px;color:#fff;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">After Post-Graduation</h3>
+                            <p class="card-text">Research, NET/SET, PhD, professional skill development, competitive examinations, teaching, and higher-level government roles.</p>
+                            <div class="card-footer" style="padding:0; margin-top:var(--space-lg);">
+                                <a href="counselling.html" class="btn btn-sm btn-secondary">Get Advice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section text-center" style="background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); color: #fff;">
+            <div class="container reveal">
+                <h2 style="color:#fff;">Still Not Sure?</h2>
+                <p style="color:#d6d3d1;margin: var(--space-md) auto var(--space-2xl);max-width:480px;">Book a one-on-one counselling session and get personalized advice from our education experts.</p>
+                <a href="counselling.html" class="btn btn-white btn-lg">Talk to a Counsellor</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md);">
+                        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width: 28px; height: 28px; color: var(--color-accent);"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        <span style="font-size: 1.1rem; font-weight: 800; color: #fff;">AMBEDKAR SIKHYA</span>
+                    </div>
+                    <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: #78716c; margin-bottom: 1rem;">Learn • Guide • Grow • Succeed</p>
+                    <p>Empowering students with quality education, career guidance, and reliable educational updates.</p>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@AmbedkarSikhsha" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/ambedkarsikhsha?utm_source=qr&dlrf=MWZpNDZycWNyOHlrbw==" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/share/1ETxiVoRoM/" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="https://t.me/ambedkarsikhya" target="_blank" rel="noopener" aria-label="Telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#gov-exam-counselling">Govt Exam Counselling</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#founder">About Founder</a></li>
+                        <li><a href="career.html">Career Guidance</a></li>
+                        <li><a href="tuition.html">Home Tuition</a></li>
+                        <li><a href="youtube.html">YouTube</a></li>
+                        <li><a href="updates.html">Updates</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#gov-exam-counselling">Govt Exam Counselling</a></li>
+                        <li><a href="tuition.html">Home Tuition</a></li>
+                        <li><a href="counselling.html">Career Counselling</a></li>
+                        <li><a href="career.html">Admission Guidance</a></li>
+                        <li><a href="updates.html">Educational Updates</a></li>
+                        <li><a href="courses.html">Study Materials (PDFs)</a></li>
+                        <li><a href="practice.html">Online MCQ Practice Tests</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.youtube.com/@AmbedkarSikhsha" target="_blank" rel="noopener">YouTube: @AmbedkarSikhsha</a></li>
+                        <li><a href="https://t.me/ambedkarsikhya" target="_blank" rel="noopener">Telegram: @ambedkarsikhya</a></li>
+                        <li><a href="https://www.instagram.com/ambedkarsikhsha?utm_source=qr&dlrf=MWZpNDZycWNyOHlrbw==" target="_blank" rel="noopener">Instagram: @ambedkarsikhsha</a></li>
+                        <li><a href="https://www.facebook.com/share/1ETxiVoRoM/" target="_blank" rel="noopener">Facebook Page</a></li>
+                        <li><a href="https://wa.me/919090398780" target="_blank" rel="noopener">WhatsApp Chat</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Ambedkar Sikhya provides educational information for informational purposes. Verify important dates with official sources. &copy; 2026 Ambedkar Sikhya.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                    <a href="admin.html">Admin Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script><script src="career.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

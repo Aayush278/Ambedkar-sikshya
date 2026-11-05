@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambedkar Sikhya — Admin Console</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="admin.css">
+    <!-- Official Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+</head>
+<body class="admin-body">
+
+    <!-- ========================================== -->
+    <!-- 1. ADMIN LOGIN VIEW (If not logged in)     -->
+    <!-- ========================================== -->
+    <section class="admin-login-wrapper" id="admin-login-section">
+        <div class="admin-login-card">
+            <div style="text-align: center; margin-bottom: var(--space-xl);">
+                <div style="display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:50%; background:rgba(26,46,90,0.1); color:var(--color-primary); margin-bottom:var(--space-sm);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h1 style="font-size: 1.4rem; font-weight: 800; color: var(--color-heading); margin-bottom: 0.25rem;">Admin Portal</h1>
+                <p style="font-size: 0.85rem; color: var(--color-text-light);">Ambedkar Sikhya Content Management</p>
+            </div>
+
+            <div id="login-error" class="error-message" style="display: none; background: #fee2e2; color: #dc2626; padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.85rem; margin-bottom: var(--space-md); border: 1px solid #fca5a5;"></div>
+
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label class="form-label" for="admin-email">Admin Email</label>
+                    <input type="email" id="admin-email" class="form-control" placeholder="admin@ambedkarsikhya.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="admin-password">Password</label>
+                    <input type="password" id="admin-password" class="form-control" placeholder="••••••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center; font-weight: 700;">
+                    Login to Dashboard
+                </button>
+            </form>
+            <div style="text-align: center; margin-top: var(--space-xl);">
+                <a href="index.html" style="font-size: 0.825rem; color: var(--color-text-light); text-decoration: none;">← Back to Main Website</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. ADMIN DASHBOARD VIEW (When logged in)   -->
+    <!-- ========================================== -->
+    <div id="admin-dashboard-section" style="display: none;">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <a href="index.html" class="admin-brand">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                <span>AMBEDKAR SIKHYA <small style="font-size:0.7rem; font-weight:400; opacity:0.8;">Admin</small></span>
+            </a>
+            <div class="admin-user-info">
+                <span class="admin-badge" id="admin-user-email">admin@ambedkarsikhya.com</span>
+                <a href="index.html" target="_blank" class="btn btn-sm" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);">View Site ↗</a>
+                <button type="button" class="btn btn-sm" id="admin-logout-btn" style="background: #dc2626; color: #fff; border: none;">Logout</button>
+            </div>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <nav class="admin-nav-tabs">
+            <button type="button" class="admin-tab-btn active" data-target="tab-mcq">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" x2="12.01" y1="17" y2="17"/></svg>
+                MCQ Question Bank
+            </button>
+            <button type="button" class="admin-tab-btn" data-target="tab-pdf">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/></svg>
+                Upload PDFs & Notes
+            </button>
+        </nav>
+
+        <div class="admin-container">
+            <!-- TAB 1: MCQ QUESTIONS -->
+            <div id="tab-mcq" class="admin-tab-pane">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <div>
+                            <h2>Add New MCQ Question</h2>
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin: 0;">Add multiple choice questions with subject & class categorization and instant practice solutions.</p>
+                        </div>
+                        <div id="question-status" style="display: none;"></div>
+                    </div>
+
+                    <form id="add-question-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="q-class">Class / Level <span style="color:var(--color-error)">*</span></label>
+                                <select id="q-class" class="form-control" required>
+                                    <option value="Government & Competitive Exams">Government & Competitive Exams (OPSC / OSSC / SSC / UPSC)</option>
+                                    <option value="Odisha General Studies">Odisha General Studies</option>
+                                    <option value="Teaching Exams">Teaching Exams (OTET / OSSTET / CTET)</option>
+                                    <option value="Class 10">Class 10 (Matriculation)</option>
+                                    <option value="+2 Science">+2 Science</option>
+                                    <option value="+2 Arts">+2 Arts</option>
+                                    <option value="+2 Commerce">+2 Commerce</option>
+                                    <option value="Graduation">Graduation (+3)</option>
+                                    <option value="Class 6–9">Class 6–9</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="q-subject">Subject <span style="color:var(--color-error)">*</span></label>
+                                <select id="q-subject" class="form-control" required>
+                                    <option value="">-- Select Subject --</option>
+                                    <optgroup label="General Studies (GS)">
+                                        <option value="Ancient Indian History">Ancient Indian History</option>
+                                        <option value="Medieval Indian History">Medieval Indian History</option>
+                                        <option value="Modern Indian History">Modern Indian History</option>
+                                        <option value="Indian National Movement">Indian National Movement</option>
+                                        <option value="World History">World History</option>
+                                        <option value="Indian Art & Culture">Indian Art & Culture</option>
+                                        <option value="Indian Geography">Indian Geography</option>
+                                        <option value="World Geography">World Geography</option>
+                                        <option value="Physical Geography">Physical Geography</option>
+                                        <option value="Indian Polity">Indian Polity</option>
+                                        <option value="Indian Constitution">Indian Constitution</option>
+                                        <option value="Indian Economy">Indian Economy</option>
+                                        <option value="Environment & Ecology">Environment & Ecology</option>
+                                        <option value="General Science">General Science</option>
+                                        <option value="Science & Technology">Science & Technology</option>
+                                        <option value="Biodiversity">Biodiversity</option>
+                                        <option value="Disaster Management">Disaster Management</option>
+                                        <option value="Internal Security">Internal Security</option>
+                                        <option value="International Relations">International Relations</option>
+                                        <option value="Governance">Governance</option>
+                                        <option value="Social Justice">Social Justice</option>
+                                        <option value="Indian Society">Indian Society</option>
+                                        <option value="Ethics, Integrity & Aptitude">Ethics, Integrity & Aptitude</option>
+                                        <option value="Current Affairs">Current Affairs</option>
+                                        <option value="Agriculture">Agriculture</option>
+                                        <option value="Computer Awareness">Computer Awareness</option>
+                                        <option value="General Knowledge">General Knowledge</option>
+                                        <option value="Logical Reasoning">Logical Reasoning</option>
+                                        <option value="Quantitative Aptitude">Quantitative Aptitude</option>
+                                        <option value="English Language">English Language</option>
+                                        <option value="Odia Language">Odia Language</option>
+                                    </optgroup>
+                                    <optgroup label="Odisha General Studies">
+                                        <option value="Odisha History">Odisha History</option>
+                                        <option value="Odisha Geography">Odisha Geography</option>
+                                        <option value="Odisha Polity">Odisha Polity</option>
+                                        <option value="Odisha Economy">Odisha Economy</option>
+                                        <option value="Odisha Art & Culture">Odisha Art & Culture</option>
+                                        <option value="Odisha Freedom Movement">Odisha Freedom Movement</option>
+                                        <option value="Odisha Tribes">Odisha Tribes</option>
+                                        <option value="Odisha Government Schemes">Odisha Government Schemes</option>
+                                        <option value="Odisha Current Affairs">Odisha Current Affairs</option>
+                                    </optgroup>
+                                    <optgroup label="School & Teaching Subjects">
+                                        <option value="Mathematics">Mathematics</option>
+                                        <option value="Physics">Physics</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Biology / Life Science">Biology / Life Science</option>
+                                        <option value="Child Development & Pedagogy">Child Development & Pedagogy</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="q-topic">Topic / Chapter Name <span style="color:var(--color-error)">*</span></label>
+                            <input type="text" id="q-topic" class="form-control" placeholder="e.g. Real Numbers, Quadratic Equations, Child Development, etc." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="q-text">Question Text <span style="color:var(--color-error)">*</span></label>
+                            <textarea id="q-text" class="form-control" rows="3" placeholder="Enter the complete question here..." required></textarea>
+                        </div>
+
+                        <!-- 4 Options -->
+                        <div class="options-grid">
+                            <div class="form-group">
+                                <label class="form-label" for="q-opt-a">Option A <span style="color:var(--color-error)">*</span></label>
+                                <div class="option-input-wrapper">
+                                    <span class="option-prefix">A</span>
+                                    <input type="text" id="q-opt-a" class="form-control" placeholder="Answer option A" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="q-opt-b">Option B <span style="color:var(--color-error)">*</span></label>
+                                <div class="option-input-wrapper">
+                                    <span class="option-prefix">B</span>
+                                    <input type="text" id="q-opt-b" class="form-control" placeholder="Answer option B" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="q-opt-c">Option C <span style="color:var(--color-error)">*</span></label>
+                                <div class="option-input-wrapper">
+                                    <span class="option-prefix">C</span>
+                                    <input type="text" id="q-opt-c" class="form-control" placeholder="Answer option C" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="q-opt-d">Option D <span style="color:var(--color-error)">*</span></label>
+                                <div class="option-input-wrapper">
+                                    <span class="option-prefix">D</span>
+                                    <input type="text" id="q-opt-d" class="form-control" placeholder="Answer option D" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="q-correct">Correct Option <span style="color:var(--color-error)">*</span></label>
+                                <select id="q-correct" class="form-control" required style="font-weight:700; color:var(--color-primary);">
+                                    <option value="A">Option A</option>
+                                    <option value="B">Option B</option>
+                                    <option value="C">Option C</option>
+                                    <option value="D">Option D</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="q-explanation">Explanation / Solution (Optional)</label>
+                                <input type="text" id="q-explanation" class="form-control" placeholder="Explain why this option is correct (shown to students in Practice mode)">
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content: flex-end; margin-top: var(--space-md);">
+                            <button type="submit" class="btn btn-primary btn-lg" style="padding: 0.85rem 2rem;">
+                                Save Question
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing Questions List -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h2>Existing Question Bank</h2>
+                        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+                            <select id="filter-class" class="form-control" style="width: auto; padding: 0.5rem 1.5rem 0.5rem 0.75rem;">
+                                <option value="">All Classes & Exams</option>
+                                <option value="Government & Competitive Exams">Government & Competitive Exams</option>
+                                <option value="Odisha General Studies">Odisha General Studies</option>
+                                <option value="Teaching Exams">Teaching Exams</option>
+                                <option value="Class 10">Class 10</option>
+                                <option value="+2 Science">+2 Science</option>
+                                <option value="+2 Arts">+2 Arts</option>
+                                <option value="+2 Commerce">+2 Commerce</option>
+                                <option value="Graduation">Graduation</option>
+                            </select>
+                            <select id="filter-subject" class="form-control" style="width: auto; padding: 0.5rem 1.5rem 0.5rem 0.75rem;">
+                                <option value="">All Subjects</option>
+                                <optgroup label="General Studies (GS)">
+                                    <option value="Ancient Indian History">Ancient Indian History</option>
+                                    <option value="Medieval Indian History">Medieval Indian History</option>
+                                    <option value="Modern Indian History">Modern Indian History</option>
+                                    <option value="Indian National Movement">Indian National Movement</option>
+                                    <option value="World History">World History</option>
+                                    <option value="Indian Art & Culture">Indian Art & Culture</option>
+                                    <option value="Indian Geography">Indian Geography</option>
+                                    <option value="World Geography">World Geography</option>
+                                    <option value="Physical Geography">Physical Geography</option>
+                                    <option value="Indian Polity">Indian Polity</option>
+                                    <option value="Indian Constitution">Indian Constitution</option>
+                                    <option value="Indian Economy">Indian Economy</option>
+                                    <option value="Environment & Ecology">Environment & Ecology</option>
+                                    <option value="General Science">General Science</option>
+                                    <option value="Science & Technology">Science & Technology</option>
+                                    <option value="Biodiversity">Biodiversity</option>
+                                    <option value="Disaster Management">Disaster Management</option>
+                                    <option value="Internal Security">Internal Security</option>
+                                    <option value="International Relations">International Relations</option>
+                                    <option value="Governance">Governance</option>
+                                    <option value="Social Justice">Social Justice</option>
+                                    <option value="Indian Society">Indian Society</option>
+                                    <option value="Ethics, Integrity & Aptitude">Ethics, Integrity & Aptitude</option>
+                                    <option value="Current Affairs">Current Affairs</option>
+                                    <option value="Agriculture">Agriculture</option>
+                                    <option value="Computer Awareness">Computer Awareness</option>
+                                    <option value="General Knowledge">General Knowledge</option>
+                                    <option value="Logical Reasoning">Logical Reasoning</option>
+                                    <option value="Quantitative Aptitude">Quantitative Aptitude</option>
+                                    <option value="English Language">English Language</option>
+                                    <option value="Odia Language">Odia Language</option>
+                                </optgroup>
+                                <optgroup label="Odisha General Studies">
+                                    <option value="Odisha History">Odisha History</option>
+                                    <option value="Odisha Geography">Odisha Geography</option>
+                                    <option value="Odisha Polity">Odisha Polity</option>
+                                    <option value="Odisha Economy">Odisha Economy</option>
+                                    <option value="Odisha Art & Culture">Odisha Art & Culture</option>
+                                    <option value="Odisha Freedom Movement">Odisha Freedom Movement</option>
+                                    <option value="Odisha Tribes">Odisha Tribes</option>
+                                    <option value="Odisha Government Schemes">Odisha Government Schemes</option>
+                                    <option value="Odisha Current Affairs">Odisha Current Affairs</option>
+                                </optgroup>
+                                <optgroup label="School & Teaching Subjects">
+                                    <option value="Mathematics">Mathematics</option>
+                                    <option value="Physics">Physics</option>
+                                    <option value="Chemistry">Chemistry</option>
+                                    <option value="Biology / Life Science">Biology / Life Science</option>
+                                    <option value="Child Development & Pedagogy">Child Development & Pedagogy</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="questions-list"></div>
+                </div>
+            </div>
+
+            <!-- TAB 2: PDF UPLOADS -->
+            <div id="tab-pdf" class="admin-tab-pane" style="display: none;">
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <div>
+                            <h2>Upload PDF Study Material or Question Paper</h2>
+                            <p style="font-size: 0.85rem; color: var(--color-text-light); margin: 0;">Files are saved directly to Supabase Storage and published to the Courses page.</p>
+                        </div>
+                        <div id="upload-status" style="display: none;"></div>
+                    </div>
+
+                    <form id="upload-pdf-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="pdf-title">Material Title <span style="color:var(--color-error)">*</span></label>
+                                <input type="text" id="pdf-title" class="form-control" placeholder="e.g. Class 10 Trigonometry Complete Notes (PDF)" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="pdf-category">Category <span style="color:var(--color-error)">*</span></label>
+                                <select id="pdf-category" class="form-control" required>
+                                    <option value="PDFs & Notes">PDFs & Notes</option>
+                                    <option value="Questions">Questions (Question Papers & Sets)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="pdf-class">Class / Level <span style="color:var(--color-error)">*</span></label>
+                                <select id="pdf-class" class="form-control" required>
+                                    <option value="Government & Competitive Exams">Government & Competitive Exams</option>
+                                    <option value="Odisha General Studies">Odisha General Studies</option>
+                                    <option value="Teaching Exams">Teaching Exams (OTET / OSSTET / CTET)</option>
+                                    <option value="Class 10">Class 10</option>
+                                    <option value="+2 Science">+2 Science</option>
+                                    <option value="+2 Arts">+2 Arts</option>
+                                    <option value="+2 Commerce">+2 Commerce</option>
+                                    <option value="Graduation">Graduation</option>
+                                    <option value="Class 6–10">Class 6–10</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="pdf-subject">Subject <span style="color:var(--color-error)">*</span></label>
+                                <input type="text" id="pdf-subject" class="form-control" placeholder="e.g. Mathematics, Physics, GK" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="pdf-topic">Topic / Sub-topic</label>
+                            <input type="text" id="pdf-topic" class="form-control" placeholder="e.g. Chapter 8 Trigonometry or Annual Exam 2025">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="pdf-file">Select PDF File <span style="color:var(--color-error)">*</span></label>
+                            <input type="file" id="pdf-file" class="form-control" accept=".pdf,application/pdf" required style="padding: 0.6rem;">
+                            <small style="display:block; margin-top:4px; color:var(--color-text-light);">Supported formats: PDF documents only.</small>
+                        </div>
+
+                        <div style="display:flex; justify-content: flex-end; margin-top: var(--space-md);">
+                            <button type="submit" class="btn btn-primary btn-lg" style="padding: 0.85rem 2rem;">
+                                Upload PDF Material
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Existing PDFs Table -->
+                <div class="admin-card">
+                    <div class="admin-card-header">
+                        <h2>Published Study Materials & PDFs</h2>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Class</th>
+                                    <th>Subject</th>
+                                    <th>Size</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="materials-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
+
